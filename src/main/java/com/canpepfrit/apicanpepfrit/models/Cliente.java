@@ -1,9 +1,20 @@
 package com.canpepfrit.apicanpepfrit.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="clientes")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,4 +28,6 @@ public class Cliente {
     private String email;
     @Column(name="telefono")
     private String telefono;
+    @OneToMany(mappedBy = "cliente")
+    private List<Reserva> reservas = new ArrayList<>();
 }

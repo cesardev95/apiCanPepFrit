@@ -19,9 +19,11 @@ public class RegistroActividad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
-    @Column(name="id_empleado")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_empleado", nullable = false)
     private Empleado empleado;
-    @Column(name="id_alojamiento")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_alojamiento", nullable = false)
     private Alojamiento alojamiento;
     @Column(name="horas")
     private int horas;
