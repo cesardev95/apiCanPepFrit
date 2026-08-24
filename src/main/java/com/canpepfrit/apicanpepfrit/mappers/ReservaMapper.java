@@ -1,6 +1,8 @@
 package com.canpepfrit.apicanpepfrit.mappers;
 
+import com.canpepfrit.apicanpepfrit.DTOS.AlojamientoDTO;
 import com.canpepfrit.apicanpepfrit.DTOS.ReservaDTO;
+import com.canpepfrit.apicanpepfrit.models.Alojamiento;
 import com.canpepfrit.apicanpepfrit.models.Reserva;
 import org.mapstruct.Mapper;
 
@@ -11,4 +13,5 @@ public interface ReservaMapper {
     ReservaDTO toDTO(Reserva reserva);
     Reserva toEntity(ReservaDTO reservaDTO);
     List<ReservaDTO> toDTOList(List<Reserva> reservas);
+    List<Reserva> toEntityList(List<ReservaDTO> reservasDTO);
 }
