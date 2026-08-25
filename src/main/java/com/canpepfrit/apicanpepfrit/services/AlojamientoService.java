@@ -22,10 +22,6 @@ public class AlojamientoService {
     private RepoAlojamiento repositorio;
     @Autowired
     private AlojamientoMapper mapper;
-    @Autowired
-    private ReservaMapper reservaMapper;
-    @Autowired
-    private RegistroActividadMapper registroMapper;
 
     public List<AlojamientoDTO> servAlojamientoList(){
         List<Alojamiento> alojamientos = repositorio.findAll();
@@ -52,20 +48,13 @@ public class AlojamientoService {
         Optional<Alojamiento> exists = repositorio.findById(id);
         if(exists.isPresent()){
             Alojamiento a = exists.get();
-            a.setDireccion(alojamientoDTO.getDireccion());
-            a.setNombre(alojamientoDTO.getNombre());
-            a.setTelefono(alojamientoDTO.getTelefono());
-            List<ReservaDTO> reservasDTO = alojamientoDTO.getReservas();
-            List<Reserva> reservas = reservaMapper.toEntityList(reservasDTO);
-            a.setReservas(reservas);
-            List<RegistroActividadDTO> registrosDTO = alojamientoDTO.getRegistros();
-            List<RegistroActividad> registros = registroMapper.toEntityList(registrosDTO);
-            a.setRegistros(registros);
-            Alojamiento modificado = repositorio.save(a);
-            return mapper.toDTO(modificado);
+            mapper.updateEntityFromDTO(alojamientoDTO,a);
+            Alojamiento modified = repositorio.save(a);
+            return mapper.toDTO(modified);
         } else{
-            throw new RuntimeException("No se ha encontrado ningun alojamiento con el id: "+id);
+            throw new RuntimeException("No se ha encontrado ningun alojamiento con id: "+id);
         }
+
     }
     public String servDeletAlojamiento(Long id){
         if(repositorio.existsById(id)){
