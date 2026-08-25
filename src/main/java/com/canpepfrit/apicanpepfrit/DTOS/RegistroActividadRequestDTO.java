@@ -5,10 +5,10 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class RegistroActividadDTO {
+public class RegistroActividadRequestDTO {
     private Long id;
-    private EmpleadoLightDTO empleado;
-    private AlojamientoLightDTO alojamiento;
+    private Long idEmpleado;
+    private Long idAlojamiento;
     private int horas;
     private Date fecha;
 }

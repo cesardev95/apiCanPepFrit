@@ -1,6 +1,7 @@
 package com.canpepfrit.apicanpepfrit.mappers;
 
 import com.canpepfrit.apicanpepfrit.DTOS.EmpleadoDTO;
+import com.canpepfrit.apicanpepfrit.DTOS.EmpleadoLightDTO;
 import com.canpepfrit.apicanpepfrit.models.Empleado;
 import org.mapstruct.Mapper;
 
@@ -10,6 +11,8 @@ import java.util.List;
 public interface EmpleadoMapper {
     EmpleadoDTO toDTO(Empleado empleado);
     Empleado toEntity(EmpleadoDTO empleadoDTO);
+
+    EmpleadoLightDTO toLightDTO(Empleado empleado);
 
     List<EmpleadoDTO> toDTOList(List<Empleado> empleados);
 }
