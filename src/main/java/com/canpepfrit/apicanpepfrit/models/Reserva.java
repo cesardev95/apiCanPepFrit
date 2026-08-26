@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name="reservas")
+@Table(name = "reservas")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,7 +18,7 @@ import java.util.Date;
 public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_cliente", nullable = false)
@@ -26,11 +26,11 @@ public class Reserva {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_alojamiento", nullable = false)
     private Alojamiento alojamiento;
-    @Column(name="fecha_inicio")
+    @Column(name = "fecha_inicio")
     private Date fechaInicio;
-    @Column(name="fecha_final")
+    @Column(name = "fecha_final")
     private Date fechaFinal;
-    @Column(name="precio")
+    @Column(name = "precio")
     private BigDecimal precio;
 
 }

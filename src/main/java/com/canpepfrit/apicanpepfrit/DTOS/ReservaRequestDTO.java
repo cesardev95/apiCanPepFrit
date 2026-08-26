@@ -6,10 +6,10 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-public class ReservaDTO {
+public class ReservaRequestDTO {
     private Long id;
-    private ClienteLightDTO cliente;
-    private AlojamientoLightDTO alojamiento;
+    private Long idCliente;
+    private Long idAlojamiento;
     private Date fechaInicio;
     private Date fechaFinal;
     private BigDecimal precio;
