@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.util.Date;
 
 @Entity
-@Table(name="registros_actividad")
+@Table(name = "registros_actividad")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,7 +17,7 @@ import java.util.Date;
 public class RegistroActividad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_empleado", nullable = false)
@@ -25,9 +25,9 @@ public class RegistroActividad {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_alojamiento", nullable = false)
     private Alojamiento alojamiento;
-    @Column(name="horas")
+    @Column(name = "horas")
     private int horas;
-    @Column(name="fecha")
+    @Column(name = "fecha")
     private Date fecha;
 
 }

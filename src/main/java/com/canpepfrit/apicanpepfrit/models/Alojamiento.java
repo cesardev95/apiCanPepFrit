@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="alojamientos")
+@Table(name = "alojamientos")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,13 +18,13 @@ import java.util.List;
 public class Alojamiento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Long id;
-    @Column(name="nombre")
+    @Column(name = "nombre")
     private String nombre;
-    @Column(name="direccion")
+    @Column(name = "direccion")
     private String direccion;
-    @Column(name="telefono")
+    @Column(name = "telefono")
     private String telefono;
     @OneToMany(mappedBy = "alojamiento")
     private List<RegistroActividad> registros = new ArrayList<>();

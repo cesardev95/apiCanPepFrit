@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="clientes")
+@Table(name = "clientes")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,15 +18,15 @@ import java.util.List;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Long id;
-    @Column(name="nombre")
+    @Column(name = "nombre")
     private String nombre;
-    @Column(name="direccion")
+    @Column(name = "direccion")
     private String direccion;
-    @Column(name="email")
+    @Column(name = "email")
     private String email;
-    @Column(name="telefono")
+    @Column(name = "telefono")
     private String telefono;
     @OneToMany(mappedBy = "cliente")
     private List<Reserva> reservas = new ArrayList<>();
