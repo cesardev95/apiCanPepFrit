@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,8 @@ public class Empleado {
     private String nombre;
     @Column(name = "telefono")
     private String telefono;
+    @Column(name="precio_hora")
+    private BigDecimal precioHora;
     //Tipo de cascada para poder modificar las clases hijas directamente desde el JSON del padre.
     //OrphanRemoval para que borre los registros que se queden sin clase padre.
     @OneToMany(mappedBy = "empleado",cascade = CascadeType.ALL,orphanRemoval = true)

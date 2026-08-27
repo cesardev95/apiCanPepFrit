@@ -32,5 +32,21 @@ public class Reserva {
     private Date fechaFinal;
     @Column(name = "precio")
     private BigDecimal precio;
+    @Column(name="fecha_reserva")
+    private Date fechaReserva;
+    @Column(name="total_ecotasa")
+    private BigDecimal totalEcotasa;
+    @Enumerated(EnumType.STRING)
+    @Column(name="plataforma")
+    private Plataforma plataforma;
+    @Column(name="total_personas")
+    private int personas;
+
+    public enum Plataforma {
+        WEB,
+        AIRBNB,
+        BOOKING
+    }
+
 
 }
