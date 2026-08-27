@@ -46,6 +46,7 @@ public class ClienteService {
         Optional<Cliente> exists = repositorio.findById(id);
         if(exists.isPresent()){
             Cliente c = exists.get();
+            mapper.updateEntityFromDTO(dto,c);
             Cliente saved = repositorio.save(c);
             return mapper.toDTO(saved);
         } else{

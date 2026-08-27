@@ -28,6 +28,6 @@ public class Cliente {
     private String email;
     @Column(name = "telefono")
     private String telefono;
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Reserva> reservas = new ArrayList<>();
 }

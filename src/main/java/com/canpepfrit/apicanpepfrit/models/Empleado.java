@@ -24,7 +24,9 @@ public class Empleado {
     private String nombre;
     @Column(name = "telefono")
     private String telefono;
-    @OneToMany(mappedBy = "empleado")
+    //Tipo de cascada para poder modificar las clases hijas directamente desde el JSON del padre.
+    //OrphanRemoval para que borre los registros que se queden sin clase padre.
+    @OneToMany(mappedBy = "empleado",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<RegistroActividad> registros = new ArrayList<>();
 
 }

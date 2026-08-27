@@ -26,8 +26,8 @@ public class Alojamiento {
     private String direccion;
     @Column(name = "telefono")
     private String telefono;
-    @OneToMany(mappedBy = "alojamiento")
+    @OneToMany(mappedBy = "alojamiento",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<RegistroActividad> registros = new ArrayList<>();
-    @OneToMany(mappedBy = "alojamiento")
+    @OneToMany(mappedBy = "alojamiento",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Reserva> reservas = new ArrayList<>();
 }
