@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -29,7 +30,7 @@ public class RegistroActividad {
     @Column(name = "horas")
     private int horas;
     @Column(name = "fecha")
-    private Date fecha;
+    private LocalDate fecha;
     @Column(name="precio_hora")
     private BigDecimal precioHora;
 

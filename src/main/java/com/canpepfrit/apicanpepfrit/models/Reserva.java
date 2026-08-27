@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -27,13 +28,13 @@ public class Reserva {
     @JoinColumn(name = "id_alojamiento", nullable = false)
     private Alojamiento alojamiento;
     @Column(name = "fecha_inicio")
-    private Date fechaInicio;
+    private LocalDate fechaInicio;
     @Column(name = "fecha_final")
-    private Date fechaFinal;
+    private LocalDate fechaFinal;
     @Column(name = "precio")
     private BigDecimal precio;
     @Column(name="fecha_reserva")
-    private Date fechaReserva;
+    private LocalDate fechaReserva;
     @Column(name="total_ecotasa")
     private BigDecimal totalEcotasa;
     @Enumerated(EnumType.STRING)

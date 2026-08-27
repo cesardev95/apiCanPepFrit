@@ -26,6 +26,8 @@ public class Alojamiento {
     private String direccion;
     @Column(name = "telefono")
     private String telefono;
+    @Column(name="estado")
+    private boolean estado;
     @OneToMany(mappedBy = "alojamiento",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<RegistroActividad> registros = new ArrayList<>();
     @OneToMany(mappedBy = "alojamiento",cascade = CascadeType.ALL,orphanRemoval = true)

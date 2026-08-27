@@ -2,6 +2,7 @@ package com.canpepfrit.apicanpepfrit.DTOS;
 
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -10,5 +11,5 @@ public class RegistroActividadRequestDTO {
     private Long idEmpleado;
     private Long idAlojamiento;
     private int horas;
-    private Date fecha;
+    private LocalDate fecha;
 }

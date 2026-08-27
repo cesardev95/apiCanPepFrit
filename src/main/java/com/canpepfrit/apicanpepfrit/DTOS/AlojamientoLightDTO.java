@@ -8,5 +8,6 @@ public class AlojamientoLightDTO {
     private String nombre;
     private String direccion;
     private String telefono;
+    private boolean estado;
 
 }

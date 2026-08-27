@@ -10,6 +10,7 @@ public class AlojamientoDTO {
     private String nombre;
     private String direccion;
     private String telefono;
+    private boolean estado;
     private List<RegistroActividadDTO> registros;
     private List<ReservaDTO> reservas;
 }
