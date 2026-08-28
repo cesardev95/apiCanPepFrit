@@ -12,4 +12,5 @@ public class RegistroActividadDTO {
     private AlojamientoLightDTO alojamiento;
     private int horas;
     private LocalDate fecha;
+    private int precioHora;
 }

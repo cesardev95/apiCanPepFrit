@@ -9,8 +9,8 @@ import java.util.stream.IntStream;
 
 @Data
 public class DashboardDTO {
-    private String[] meses ={"ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE"};
-    private int[] dias = IntStream.rangeClosed(1, 31).toArray();
+    private final String[] meses ={"ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE"};
+    private final int[] dias = IntStream.rangeClosed(1, 31).toArray();
     private List<ClienteLightDTO> clientes;
     private String plataforma;
     private LocalDate fechaReserva;

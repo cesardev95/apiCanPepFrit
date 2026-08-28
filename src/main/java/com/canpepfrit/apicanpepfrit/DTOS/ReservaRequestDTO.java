@@ -14,4 +14,8 @@ public class ReservaRequestDTO {
     private LocalDate fechaInicio;
     private LocalDate fechaFinal;
     private BigDecimal precio;
+    private LocalDate fechaReserva;
+    private BigDecimal totalEcotasa;
+    private String plataforma;
+    private int personas;
 }

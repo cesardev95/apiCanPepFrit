@@ -7,6 +7,7 @@ import com.canpepfrit.apicanpepfrit.models.Reserva;
 import com.canpepfrit.apicanpepfrit.repositories.RepoReserva;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,6 +42,32 @@ public class ReservaService {
         }
     }
 
+    public List<ReservaDTO> findReservaByMonth(LocalDate primerDiaMes, LocalDate ultimoDiaMes){
+        return mapper.toDTOList(repositorio.findReservaByDate(primerDiaMes,ultimoDiaMes));
+    }
+
+    public List<ReservaDTO> findReservaByClientName(String cliente){
+        return mapper.toDTOList(repositorio.findReservaByCliente_Nombre(cliente));
+    }
+
+    public List<ReservaDTO> findReservaByInitDate(LocalDate fecha){
+        return mapper
+                .toDTOList(repositorio.findReservaByFechaInicio(fecha));
+    }
+
+    public List<ReservaDTO> findDinamic(LocalDate primerDiaMes,LocalDate ultimoDiaMes,String cliente,LocalDate fecha){
+        if (primerDiaMes!=null && ultimoDiaMes !=null){
+            return this.findReservaByMonth(primerDiaMes, ultimoDiaMes);
+        }
+        if(cliente!=null){
+            return this.findReservaByClientName(cliente);
+        }
+        if(fecha!=null){
+            return this.findReservaByInitDate(fecha);
+        }
+        return null;
+    }
+
     public ReservaDTO servAddRegistro(ReservaRequestDTO dto){
         Reserva reserva = mapper.toEntity(dto);
         reserva.setCliente(clienteService.obtainReference(dto.getIdCliente()));
@@ -69,4 +96,6 @@ public class ReservaService {
         repositorio.deleteById(id);
         return "El registro con id: "+id+" se ha borrado correctamente";
     }
+
+
 }
