@@ -1,33 +1,33 @@
 
-CREATE TABLE IF NOT EXISTS alojamientos(
+CREATE TABLE IF NOT EXISTS accommodations(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    direccion VARCHAR(100) NOT NULL,
-    telefono VARCHAR(100)
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    phone VARCHAR(100)
     );
-CREATE TABLE IF NOT EXISTS clientes(
+CREATE TABLE IF NOT EXISTS clients(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    direccion VARCHAR(100),
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(100),
     email VARCHAR(100) NOT NULL UNIQUE,
-    telefono VARCHAR(100)
+    phone VARCHAR(100)
     );
-CREATE TABLE IF NOT EXISTS registros_actividad(
+CREATE TABLE IF NOT EXISTS activity_logs(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    idEmpleado BIGINT NOT NULL,
-    idAlojamiento BIGINT NOT NULL,
-    horas INTEGER NOT NULL,
-    fecha DATE NOT NULL,
-    FOREIGN KEY (idEmpleado) REFERENCES empleados(id),
-    FOREIGN KEY (idAlojamiento) REFERENCES alojamientos(id)
+    id_employee BIGINT NOT NULL,
+    id_accommodation BIGINT NOT NULL,
+    hours INTEGER NOT NULL,
+    date DATE NOT NULL,
+    FOREIGN KEY (id_employee) REFERENCES employees(id),
+    FOREIGN KEY (id_accommodation) REFERENCES accommodations(id)
     );
-CREATE TABLE IF NOT EXISTS reservas(
+CREATE TABLE IF NOT EXISTS bookings(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    idCliente BIGINT NOT NULL,
-    idAlojamiento BIGINT NOT NULL,
-    fecha_inicio DATE NOT NULL,
-    fecha_final DATE NOT NULL,
-    precio DECIMAL NOT NULL,
-    FOREIGN KEY (idCliente) REFERENCES clientes(id),
-    FOREIGN KEY (idAlojamiento) REFERENCES alojamientos(id)
+    id_client BIGINT NOT NULL,
+    id_accommodation BIGINT NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    price DECIMAL NOT NULL,
+    FOREIGN KEY (id_client) REFERENCES clients(id),
+    FOREIGN KEY (id_accommodation) REFERENCES accommodations(id)
 );

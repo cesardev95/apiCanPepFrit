@@ -1,6 +1,0 @@
-CREATE TABLE IF NOT EXISTS empleados
-(
-    id       BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nombre   VARCHAR(100) NOT NULL,
-    telefono VARCHAR(100)
-);

@@ -1,11 +1,11 @@
-ALTER TABLE db_canpepfrit.empleados
-    add column precio_hora DECIMAL NOT NULL;
+ALTER TABLE db_canpepfrit.employees
+    add column hour_price DECIMAL NOT NULL;
 
-ALTER TABLE db_canpepfrit.reservas
-    add column fecha_reserva DATE NOT NULL,
+ALTER TABLE db_canpepfrit.bookings
+    add column booking_date DATE NOT NULL,
     add column total_ecotasa DECIMAL NOT NULL,
-    add column plataforma ENUM('WEB','AIRBNB','BOOKING') NOT NULL,
-    add column total_personas INT NOT NULL;
+    add column plataform ENUM('WEB','AIRBNB','BOOKING') NOT NULL,
+    add column total_people INT NOT NULL;
 
-ALTER TABLE db_canpepfrit.registros_actividad
-    add column precio_hora DECIMAL NOT NULL;
+ALTER TABLE db_canpepfrit.activity_logs
+    add column hour_price DECIMAL NOT NULL;
