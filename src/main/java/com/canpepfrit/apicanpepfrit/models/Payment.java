@@ -33,7 +33,7 @@ public class Payment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_booking" ,nullable=false)
     private Booking booking;
-    private enum PaymentMethod{
+    public enum PaymentMethod{
         TRANSFER,CASH,CARD,PLATFORM
     }
 }

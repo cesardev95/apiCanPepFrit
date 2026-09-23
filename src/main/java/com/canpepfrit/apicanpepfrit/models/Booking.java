@@ -39,8 +39,8 @@ public class Booking {
     @Column(name = "total_ecotasa")
     private BigDecimal totalEcotasa;
     @Enumerated(EnumType.STRING)
-    @Column(name = "plataform")
-    private Plataforma plataform;
+    @Column(name = "platform")
+    private Platform platform;
     @Column(name = "total_people")
     private int people;
     @Column(name="paid")
@@ -51,7 +51,7 @@ public class Booking {
     @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Payment> payments = new ArrayList<>();
 
-    public enum Plataforma {
+    public enum Platform {
         WEB,
         AIRBNB,
         BOOKING

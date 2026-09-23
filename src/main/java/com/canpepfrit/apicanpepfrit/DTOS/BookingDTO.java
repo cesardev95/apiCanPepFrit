@@ -16,7 +16,7 @@ public class BookingDTO {
     private BigDecimal price;
     private LocalDate bookingDate;
     private BigDecimal totalEcotasa;
-    private String plataform;
+    private String platform;
     private int people;
     private boolean paid;
     private String details;

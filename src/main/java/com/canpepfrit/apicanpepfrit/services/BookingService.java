@@ -4,6 +4,7 @@ import com.canpepfrit.apicanpepfrit.DTOS.BookingDTO;
 import com.canpepfrit.apicanpepfrit.DTOS.BookingRequestDTO;
 import com.canpepfrit.apicanpepfrit.mappers.BookingMapper;
 import com.canpepfrit.apicanpepfrit.models.Booking;
+import com.canpepfrit.apicanpepfrit.models.Client;
 import com.canpepfrit.apicanpepfrit.repositories.RepoBooking;
 import org.springframework.stereotype.Service;
 
@@ -81,7 +82,7 @@ public class BookingService {
         Optional<Booking> exists = repository.findById(id);
         if (exists.isPresent()) {
             Booking booking = exists.get();
-            mapper.toDTO(booking);
+            mapper.updateEntityFromRequest(dto,booking);
             booking.setClient(clientService.obtainReference(dto.getIdClient()));
             booking.setAccommodation(accommodationService.obtainReference(dto.getIdAccommodation()));
 
@@ -95,6 +96,10 @@ public class BookingService {
     public String deleteBooking(Long id) {
         repository.deleteById(id);
         return "El registro con id: " + id + " se ha borrado correctamente";
+    }
+
+    public Booking obtainReference(Long id) {
+        return repository.getReferenceById(id);
     }
 
 

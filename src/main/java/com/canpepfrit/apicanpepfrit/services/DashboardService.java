@@ -34,7 +34,7 @@ public class DashboardService {
             row.setMonth(booking.getEndDate().getMonth().name());
             row.setDays(diaInicio + "-" + diaFinal);
             row.setClientName(booking.getClient().getName());
-            row.setPlataform(booking.getPlataform().name());
+            row.setPlataform(booking.getPlatform().name());
             row.setBookingDate(booking.getBookingDate());
             row.setNetAmountBooking(booking.getPrice());
             row.setEcotasa(booking.getTotalEcotasa());
