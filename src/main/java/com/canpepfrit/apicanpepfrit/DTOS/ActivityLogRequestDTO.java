@@ -11,5 +11,6 @@ public class ActivityLogRequestDTO {
     private Long idAccommodation;
     private int hours;
     private LocalDate date;
-    private int HourPrice;
+    private int hourPrice;
+    private boolean paid;
 }

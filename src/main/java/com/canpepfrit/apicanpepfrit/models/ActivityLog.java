@@ -32,6 +32,8 @@ public class ActivityLog {
     private LocalDate date;
     @Column(name = "hour_price")
     private BigDecimal hourPrice;
+    @Column(name="paid")
+    private boolean paid;
 
 
 }

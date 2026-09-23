@@ -12,4 +12,5 @@ public class ActivityLogDTO {
     private int hours;
     private LocalDate date;
     private int hourPrice;
+    private boolean paid;
 }

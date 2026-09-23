@@ -4,10 +4,9 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
-public class BookingDTO {
+public class BookingLightDTO {
     private Long id;
     private ClientLightDTO client;
     private AccommodationLightDTO accommodation;
@@ -20,6 +19,4 @@ public class BookingDTO {
     private int people;
     private boolean paid;
     private String details;
-    private List<PaymentDTO> payments;
-
 }

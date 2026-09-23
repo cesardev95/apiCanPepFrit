@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "bookings")
@@ -41,6 +43,13 @@ public class Booking {
     private Plataforma plataform;
     @Column(name = "total_people")
     private int people;
+    @Column(name="paid")
+    private boolean paid;
+    @Column(name="details")
+    private String details;
+
+    @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Payment> payments = new ArrayList<>();
 
     public enum Plataforma {
         WEB,

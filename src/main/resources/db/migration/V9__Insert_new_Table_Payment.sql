@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS payments
+(
+    id       BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id_booking BIGINT NOT NULL,
+    amount DECIMAL NOT NULL,
+    payment_date DATE NOT NULL ,
+    plataform ENUM('TRANSFER','CARD','CASH','PLATFORM') NOT NULL
+);
